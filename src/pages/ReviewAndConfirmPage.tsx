@@ -36,6 +36,8 @@ import { useServicesBookingContext } from "../Context/BookingContext/ServicesBoo
 import { IChoosedTreatment } from "../Context/BookingContext/ServicesBookingProvider";
 import { useRandomIncreasingPrice } from "../Hooks/useRandomIncreasingPrice";
 import { useSalonsDataContext } from "../Context/SalonsDataContext/SalonsDataContext";
+import { collection, doc, updateDoc } from "firebase/firestore";
+import { db } from "../firebase-config";
 
 const ReviewAndConfirmPage = () => {
   const { id } = useParams();
@@ -58,21 +60,20 @@ const ReviewAndConfirmPage = () => {
   }, [id, salonsData]);
 
   const putData = async () => {
-    const requestOptions = {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        ...findedSalon,
-        appointments: contextData,
-      }),
+    const salonDocRef = doc(collection(db, "salons"), id);
+
+    const updates = {
+      ...findedSalon,
+      appointments: contextData,
     };
 
-    const response = await fetch(
-      `http://localhost:5001/salons/${id}`,
-      requestOptions
-    );
-    const newData = await response.json();
-    console.log(newData);
+    updateDoc(salonDocRef, updates)
+      .then(() => {
+        console.log("doc updated");
+      })
+      .catch((error) => {
+        console.error("Error updating document: ", error);
+      });
   };
 
   return (

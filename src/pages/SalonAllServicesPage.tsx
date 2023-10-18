@@ -38,7 +38,7 @@ const SalonAllServicesPage = () => {
 
   useEffect(() => {
     if (id) {
-      const findedSalon = salonsData.find((salon: IRoot) => salon.id === +id);
+      const findedSalon = salonsData?.find((salon: IRoot) => +salon.id === +id);
       setFindedSalon(findedSalon);
     }
   }, [id, salonsData]);

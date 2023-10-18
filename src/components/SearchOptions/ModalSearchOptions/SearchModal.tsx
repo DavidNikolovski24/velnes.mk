@@ -19,6 +19,8 @@ import {
   IRoot,
 } from "../../../DummyData";
 import { useUniqueArr } from "../../../Hooks/useUniqueArr";
+import { collection, doc, getDocs } from "firebase/firestore";
+import { db } from "../../../firebase-config";
 
 interface Props {
   isModalOpen: boolean;
@@ -61,10 +63,20 @@ export const SearchModal = ({
       dataSalons.flatMap((salon) => salon.location)
     );
 
+    const salonsCollectionRef = collection(db, "salons");
     useEffect(() => {
-      fetch("http://localhost:5001/salons")
-        .then((res) => res.json())
-        .then((data) => setDataSalons(data));
+      const getSalons = async () => {
+        try {
+          const data = await getDocs(salonsCollectionRef);
+
+          setDataSalons(
+            data.docs.map((doc: any) => ({ ...doc.data(), id: doc.id }))
+          );
+        } catch (error) {
+          console.error("Error fetching data:", error);
+        }
+      };
+      getSalons();
     }, []);
 
     useEffect(() => {

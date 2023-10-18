@@ -10,6 +10,8 @@ import { useEffect, useState } from "react";
 import { PageContainerPrimary } from "../styles/Section/SectionStyled";
 import { useNavigate, useParams } from "react-router";
 import { IRoot } from "../DummyData";
+import { collection, doc, getDoc, updateDoc } from "firebase/firestore";
+import { db } from "../firebase-config";
 
 const CancelPage = () => {
   const [isModalConfirm, setIsModalConfirm] = useState(false);
@@ -17,29 +19,34 @@ const CancelPage = () => {
   const { id } = useParams();
   const [findedSalon, setFindedSalon] = useState<IRoot>();
 
+  const salonDocRef = doc(collection(db, "salons"), id);
   useEffect(() => {
-    fetch(`http://localhost:5001/salons/${id}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setFindedSalon(data);
+    getDoc(salonDocRef)
+      .then((snapshot: any) => {
+        if (snapshot.exists()) {
+          setFindedSalon(snapshot.data());
+        } else {
+          console.log("No such document!");
+        }
+      })
+      .catch((error) => {
+        console.error("Error getting document:", error);
       });
+    console.log(findedSalon);
   }, []);
 
   const putData = async () => {
-    const requestOptions = {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        ...findedSalon,
-        appointments: [],
-      }),
+    const salonDocRef = doc(collection(db, "salons"), id);
+
+    const updates = {
+      ...findedSalon,
+      appointments: [],
     };
 
-    const response = await fetch(
-      `http://localhost:5001/salons/${id}`,
-      requestOptions
-    );
-    const newData = await response.json();
+    updateDoc(salonDocRef, updates).then(() => {
+      console.log("doc updated");
+      setFavoriteSalon((prev) => !prev);
+    });
   };
 
   return (
@@ -117,3 +124,6 @@ const CancelModalContainer = styled.div`
     ${openModalStyles}
   }
 `;
+function setFavoriteSalon(arg0: (prev: any) => boolean) {
+  throw new Error("Function not implemented.");
+}

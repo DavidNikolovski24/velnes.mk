@@ -52,7 +52,7 @@ const HomePage = ({ setFilterResults }: Props) => {
     <CardReview key={card.userName} {...card} />
   ));
 
-  const CardOffersArr = salonsData.map((card: IRoot) => {
+  const CardOffersArr = salonsData?.map((card: IRoot) => {
     return <CardOffers key={card.id} {...card} />;
   });
 

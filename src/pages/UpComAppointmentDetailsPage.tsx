@@ -25,6 +25,8 @@ import { useNavigate, useParams } from "react-router";
 import { useEffect, useState } from "react";
 import { IRoot } from "../DummyData";
 import { useRandomIncreasingPrice } from "../Hooks/useRandomIncreasingPrice";
+import { collection, doc, getDoc } from "firebase/firestore";
+import { db } from "../firebase-config";
 
 const UpComAppointmentDetailsPage = () => {
   const [findedSalon, setFindedSalon] = useState<IRoot>();
@@ -39,13 +41,23 @@ const UpComAppointmentDetailsPage = () => {
   const randomHigherPrice = useRandomIncreasingPrice(totalPrice || 0);
   const { id } = useParams();
   const currentMonth = new Date().toLocaleString("default", { month: "long" });
+
+  const salonDocRef = doc(collection(db, "salons"), id);
+
   useEffect(() => {
-    fetch(`http://localhost:5001/salons/${id}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setFindedSalon(data);
+    getDoc(salonDocRef)
+      .then((snapshot: any) => {
+        if (snapshot.exists()) {
+          setFindedSalon(snapshot.data());
+        } else {
+          console.log("No such document!");
+        }
+      })
+      .catch((error) => {
+        console.error("Error getting document:", error);
       });
   }, []);
+
   useEffect(() => {
     const currentDate = new Date().getDate();
     let hasUpcomingApp = false;

@@ -13,6 +13,8 @@ import { useNavigate } from "react-router";
 import { IReviewsOverall, IRoot } from "../../../DummyData";
 import { useRatingConverter } from "../../../Hooks/useRatingConverter";
 import { useSalonsDataContext } from "../../../Context/SalonsDataContext/SalonsDataContext";
+import { collection, doc, getDoc, updateDoc } from "firebase/firestore";
+import { db } from "../../../firebase-config";
 
 interface Props {
   id: number;
@@ -41,43 +43,33 @@ const CardRecommended = ({
 
   const rating = useRatingConverter(reviewsOverall);
 
-  const { setSalonsData } = useSalonsDataContext();
-
   const putData = async () => {
-    const existingResponse = await fetch(`http://localhost:5001/salons/${id}`);
-    const existingData = await existingResponse.json();
+    const salonDocRef = doc(collection(db, "salons"), id.toString());
+    getDoc(salonDocRef)
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          const salon = snapshot.data();
+          const updates = {
+            ...salon,
+            isFavorite: !salon.isFavorite,
+          };
 
-    const requestOptions = {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        ...existingData,
-        isFavorite: !existingData.isFavorite,
-      }),
-    };
-
-    const response = await fetch(
-      `http://localhost:5001/salons/${id}`,
-      requestOptions
-    );
-
-    if (!response.ok) {
-      throw new Error("Failed to update salon data.");
-    }
-    const newData = await response.json();
-    setisFavoriteState(newData.isFavorite);
-
-    setSalonsData((prevSalonsData: IRoot[]) => {
-      return prevSalonsData.map((salon) => {
-        if (salon.id === id) {
-          return { ...salon, isFavorite: !salon.isFavorite };
+          updateDoc(salonDocRef, updates)
+            .then(() => {
+              console.log("doc updated");
+              setisFavoriteState((prev) => !prev);
+            })
+            .catch((error) => {
+              console.error("Error updating document: ", error);
+            });
         } else {
-          return salon;
+          console.log("No such document!");
         }
+      })
+      .catch((error) => {
+        console.error("Error getting document:", error);
       });
-    });
   };
-
   return (
     <CardRecommendedStyledDiv
       onClick={(e) => {

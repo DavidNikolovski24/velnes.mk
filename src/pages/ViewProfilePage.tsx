@@ -136,8 +136,7 @@ const ViewProfileImgDiv = styled.div`
   flex-shrink: 0;
   border-radius: 50%;
   background: url(${DummyImg});
-  background-size:cover;
-    lightgray -12.759px -27.364px / 100% 149.982% no-repeat;
+  background-size: cover;
 `;
 const BottomCtaDiv = styled.div`
   width: 100%;

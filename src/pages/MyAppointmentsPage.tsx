@@ -12,6 +12,8 @@ import { PrimaryButtonFull } from "../styles/Buttons/Buttons";
 import { useNavigate } from "react-router";
 import { useEffect, useState } from "react";
 import { IRoot } from "../DummyData";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebase-config";
 
 const MyAppointmentsPage = () => {
   const navigate = useNavigate();
@@ -21,12 +23,21 @@ const MyAppointmentsPage = () => {
   const [upcommingApp, setUpcommingApp] = useState([]);
   const [pastApp, setPastApp] = useState([]);
 
+  const salonsCollectionRef = collection(db, "salons");
+
   useEffect(() => {
-    fetch("http://localhost:5001/salons")
-      .then((res) => res.json())
-      .then((data) => {
-        setDataSalons(data);
-      });
+    const getSalons = async () => {
+      try {
+        const data = await getDocs(salonsCollectionRef);
+
+        setDataSalons(
+          data.docs.map((doc: any) => ({ ...doc.data(), id: doc.id }))
+        );
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+    getSalons();
   }, []);
 
   useEffect(() => {
@@ -64,7 +75,6 @@ const MyAppointmentsPage = () => {
 
   return (
     <>
-    
       <Titlebar icons={false} headline="" bg="white" closeIcon={true} />
       <MyAppointmentsPageContainer>
         <H2Styled color={theme.colors.primary.brown}>My appointments</H2Styled>

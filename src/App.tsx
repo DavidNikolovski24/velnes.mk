@@ -26,7 +26,7 @@ import ProfileEditPersonalInfoPage from "./pages/ProfileEditPersonalInfoPage";
 import ProfileEditNotificationPage from "./pages/ProfileEditNotificationPage";
 import ProfilPaymentMethodsPage from "./pages/ProfilPaymentMethodsPage";
 import ProfileAddNewCardPage from "./pages/ProfileAddNewCardPage";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Route,
   RouterProvider,
@@ -44,6 +44,11 @@ function App() {
     treatment: "Any",
     date: "Any",
   });
+  useEffect(() => {
+    alert(
+      "This is mobile view only!!! TIPS: -please press F12 and choice mobile resolution "
+    );
+  }, []);
 
   const router = createBrowserRouter(
     createRoutesFromElements(

@@ -35,7 +35,13 @@ import AdditionalInfoElement from "../components/AdditionalInfoElement/Additiona
 import Accordion from "../components/Accordion/Accordion";
 
 import Footer from "../components/Footer/Footer";
-import { IRoot, ISalonReview, SalonReviews } from "../DummyData";
+import {
+  Employee,
+  IRoot,
+  ISalonReview,
+  IService,
+  SalonReviews,
+} from "../DummyData";
 import { useNavigate, useParams } from "react-router";
 import { useEffect, useState } from "react";
 import { useShuffleArr } from "../Hooks/useShuffleArr";
@@ -45,62 +51,49 @@ import "aos/dist/aos.css";
 import { useRatingConverter } from "../Hooks/useRatingConverter";
 import CardRecommended from "../components/Cards/CardRecommended/CardRecommended";
 import { useSalonsDataContext } from "../Context/SalonsDataContext/SalonsDataContext";
+import { db } from "../firebase-config";
+import { collection, doc, getDoc, updateDoc } from "firebase/firestore";
 
 const SalonPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const { salonsData, setSalonsData } = useSalonsDataContext();
-  const [findedSalon, setFindedSalon] = useState<IRoot>();
-  const [favoriteSalon, setFavoriteSalon] = useState(findedSalon?.isFavorite);
+  const { salonsData } = useSalonsDataContext();
+  const [findedSalon, setFindedSalon] = useState<any>();
+  const [favoriteSalon, setFavoriteSalon] = useState(false);
+
+  const salonDocRef = doc(collection(db, "salons"), id);
 
   useEffect(() => {
-    if (id) {
-      const dataSalon = salonsData.find((salon: IRoot) => salon.id === +id);
-      if (dataSalon) {
-        setFavoriteSalon(dataSalon.isFavorite);
-      }
-    }
+    getDoc(salonDocRef)
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          setFindedSalon(snapshot.data());
+          setFavoriteSalon(snapshot.data().isFavorite);
+        } else {
+          console.log("No such document!");
+        }
+      })
+      .catch((error) => {
+        console.error("Error getting document:", error);
+      });
   }, []);
 
-  useEffect(() => {
-    fetch(`http://localhost:5001/salons/${id}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setFindedSalon(data);
-      });
-  }, [id]);
-
   const putData = async () => {
-    const requestOptions = {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        ...findedSalon,
-        isFavorite: !findedSalon?.isFavorite,
-      }),
+    const salonDocRef = doc(collection(db, "salons"), id);
+
+    const updates = {
+      isFavorite: !findedSalon?.isFavorite,
     };
 
-    const response = await fetch(
-      `http://localhost:5001/salons/${id}`,
-      requestOptions
-    );
-    if (!response.ok) {
-      throw new Error("Failed to update salon data.");
-    }
-    const newData = await response.json();
-
-    setSalonsData((prevSalonsData: IRoot[]) => {
-      return prevSalonsData.map((salon) => {
-        if (id && salon.id === +id) {
-          return { ...salon, isFavorite: newData.isFavorite };
-        } else {
-          return salon;
-        }
+    updateDoc(salonDocRef, updates)
+      .then(() => {
+        console.log("Document successfully updated!");
+        setFavoriteSalon((prev) => !prev);
+      })
+      .catch((error) => {
+        console.error("Error updating document: ", error);
       });
-    });
-
-    setFavoriteSalon(newData.isFavorite);
   };
 
   useEffect(() => {
@@ -205,7 +198,7 @@ const SalonPage = () => {
           <ServicesWrapper>
             <H3Styled>Matching search</H3Styled>
 
-            {trim3Services?.map((service, index) => (
+            {trim3Services?.map((service: IService, index: number) => (
               <CardService
                 key={service.service}
                 discount={index % 2 === 0}
@@ -235,7 +228,7 @@ const SalonPage = () => {
                   sliderHeight={250}
                   parentMarginY={0}
                 >
-                  {findedSalon?.employees.map((card) => (
+                  {findedSalon?.employees.map((card: Employee) => (
                     <StaffMemberCard key={card.name} {...card} />
                   ))}
                 </DragSwiper>
@@ -401,7 +394,7 @@ const SalonPage = () => {
                   sliderHeight={330}
                   parentMarginY={0}
                 >
-                  {salonsData.map((salon: IRoot) => (
+                  {salonsData?.map((salon: IRoot) => (
                     <CardRecommended key={salon.id} {...salon} />
                   ))}
                 </DragSwiper>

@@ -23,18 +23,27 @@ import TextArea from "../components/Inputs/TextArea";
 import { useEffect, useState } from "react";
 import { IRoot } from "../DummyData";
 import { useNavigate, useParams } from "react-router";
+import { collection, doc, getDoc } from "firebase/firestore";
+import { db } from "../firebase-config";
 
 const FeedbackFormPage = () => {
   const [findedSalon, setFindedSalon] = useState<IRoot>();
   const { id } = useParams();
   const currentMonth = new Date().toLocaleString("default", { month: "long" });
   const navigate = useNavigate();
+  const salonDocRef = doc(collection(db, "salons"), id);
 
   useEffect(() => {
-    fetch(`http://localhost:5001/salons/${id}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setFindedSalon(data);
+    getDoc(salonDocRef)
+      .then((snapshot: any) => {
+        if (snapshot.exists()) {
+          setFindedSalon(snapshot.data());
+        } else {
+          console.log("No such document!");
+        }
+      })
+      .catch((error) => {
+        console.error("Error getting document:", error);
       });
   }, []);
 
@@ -81,7 +90,6 @@ const FeedbackFormPage = () => {
               // value={value}
               onChange={(event, newValue) => {
                 // setValue(newValue);
-                console.log("ss");
               }}
             />
           </ContainerJSpaceBetweenAStart>
@@ -94,7 +102,6 @@ const FeedbackFormPage = () => {
               // value={value}
               onChange={(event, newValue) => {
                 // setValue(newValue);
-                console.log("ss");
               }}
             />
           </ContainerJSpaceBetweenAStart>
@@ -107,7 +114,6 @@ const FeedbackFormPage = () => {
               // value={value}
               onChange={(event, newValue) => {
                 // setValue(newValue);
-                console.log("ss");
               }}
             />
           </ContainerJSpaceBetweenAStart>

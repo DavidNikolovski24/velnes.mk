@@ -1,5 +1,3 @@
-import React from "react";
-
 const NailIcon = ({
   color = "black",
   size = 20,

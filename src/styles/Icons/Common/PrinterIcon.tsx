@@ -1,5 +1,3 @@
-import React from "react";
-
 const PrinterIcon = ({
   color = "black",
   size = 24,

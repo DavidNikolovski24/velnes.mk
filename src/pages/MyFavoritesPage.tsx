@@ -5,7 +5,6 @@ import CardSaloon from "../components/Cards/CardSaloon/CardSaloon";
 import { PageContainerPrimary } from "../styles/Section/SectionStyled";
 import { IRoot } from "../DummyData";
 import { useEffect, useState } from "react";
-import { useSalonsDataContext } from "../Context/SalonsDataContext/SalonsDataContext";
 import {
   collection,
   doc,

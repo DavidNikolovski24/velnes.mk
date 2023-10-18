@@ -1,5 +1,3 @@
-import React from "react";
-
 const LeftArrowIcon = ({
   color = "black",
   size = 20,

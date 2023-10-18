@@ -7,13 +7,13 @@ import {
 } from "../../../styles/Headlines/Headlines";
 import { theme } from "../../../styles/themeStyles";
 import Rating from "../../Rating/Rating";
-import { useState } from "react";
+
 import { IRoot } from "../../../DummyData";
 import { useRatingConverter } from "../../../Hooks/useRatingConverter";
 
 interface Props extends IRoot {
   outsideFavorite?: boolean;
-  outsideSetterFav: any;
+  outsideSetterFav?: any;
 }
 const CardSaloon = ({
   address,

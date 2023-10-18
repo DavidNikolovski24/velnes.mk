@@ -6,7 +6,7 @@ import {
   PageContainerPrimary,
 } from "../styles/Section/SectionStyled";
 import Appointments from "../components/Appointments/Appointments";
-import styled from "styled-components";
+
 import { useNavigate } from "react-router";
 
 const ManageAppointmentsPage = () => {
@@ -47,6 +47,3 @@ const ManageAppointmentsPage = () => {
 };
 
 export default ManageAppointmentsPage;
-const AppointmentWrapper = styled.div`
-  width: 100%;
-`;

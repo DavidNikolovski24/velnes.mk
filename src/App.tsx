@@ -18,7 +18,7 @@ import ManageAppointmentsPage from "./pages/ManageAppointmentsPage";
 import AddToCalendarPage from "./pages/AddToCalendarPage";
 import CancelPage from "./pages/CancelPage";
 import MyAppointmentLoyaltyPage from "./pages/MyAppointmentLoyaltyPage";
-// import MyMembershipsActivityPage from "./pages/MyMembershipsActivityPage";
+
 import MyFavoritesPage from "./pages/MyFavoritesPage";
 import ViewProfilePage from "./pages/ViewProfilePage";
 import ProfileEditPage from "./pages/ProfileEditPage";

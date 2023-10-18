@@ -1,5 +1,3 @@
-import React from "react";
-
 const CopyIcon = ({
   color = "black",
   size = 24,

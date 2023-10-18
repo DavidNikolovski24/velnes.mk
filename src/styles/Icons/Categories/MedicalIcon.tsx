@@ -1,5 +1,3 @@
-import React from "react";
-
 const MedicalIcon = ({
   color = "black",
   size = 20,

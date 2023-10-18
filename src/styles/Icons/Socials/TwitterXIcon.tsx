@@ -1,5 +1,3 @@
-import React from "react";
-
 const TwitterXIcon = ({ color, size }: { color: string; size: number }) => {
   return (
     <svg

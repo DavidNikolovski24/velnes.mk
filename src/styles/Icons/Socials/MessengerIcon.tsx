@@ -1,5 +1,3 @@
-import React from "react";
-
 const MessengerIcon = ({ color, size }: { color: string; size: number }) => {
   return (
     <svg

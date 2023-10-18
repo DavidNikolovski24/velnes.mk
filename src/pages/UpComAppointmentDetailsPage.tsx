@@ -169,11 +169,6 @@ const UpComAppointmentDetailsPage = () => {
           receive a full refund to your original payment method.
         </PnormalTextRegular>
       </PageContainerPrimary>
-      {/* <BottomContainer>
-        <PrimaryButtonFull bg={theme.colors.primary.orange}>
-          <ButtonsTypo color="white">Rebook</ButtonsTypo>
-        </PrimaryButtonFull>
-      </BottomContainer> */}
     </>
   );
 };
@@ -186,13 +181,6 @@ const BadgesContainer = styled.div`
   gap: 10px;
 `;
 
-const BottomContainer = styled.div`
-  padding: 20px;
-  position: fixed;
-  bottom: 0;
-  min-width: 100%;
-  background: white;
-`;
 const PnormalTextBoldModified = styled(PnormalTextBold)`
   text-decoration: line-through;
 `;

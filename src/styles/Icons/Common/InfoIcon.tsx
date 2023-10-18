@@ -1,5 +1,3 @@
-import React from "react";
-
 const InfoIcon = ({
   color = "black",
   size = 24,

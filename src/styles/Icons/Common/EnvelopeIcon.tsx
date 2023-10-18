@@ -1,5 +1,3 @@
-import React from "react";
-
 const EnvelopeIcon = ({
   color = "black",
   size = 24,

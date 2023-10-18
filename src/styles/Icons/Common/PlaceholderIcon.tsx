@@ -1,5 +1,3 @@
-import React from "react";
-
 const PlaceholderIcon = ({
   color = "black",
   size = 24,

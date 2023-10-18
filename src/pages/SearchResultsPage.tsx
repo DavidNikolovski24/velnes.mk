@@ -47,7 +47,7 @@ const SearchResultsPage = ({ filterResults }: { filterResults: any }) => {
     setModal((prev) => !prev);
   };
 
-  const handleChange = (e: Event, newValue: number | number[]) => {
+  const handleChange = (newValue: any) => {
     setValue(newValue as number[]);
   };
   const { salonsData } = useSalonsDataContext();

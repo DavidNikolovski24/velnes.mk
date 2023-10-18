@@ -1,5 +1,3 @@
-import React from "react";
-
 const ErrorCircleIcon = ({
   color = "black",
   size = 24,

@@ -8,11 +8,11 @@ import {
 import { theme } from "../../../styles/themeStyles";
 import ReviewStar from "../../../styles/Icons/ListingSmall/ReviewStar";
 import FavoriteHeart from "../../../styles/Icons/Heart/FavoriteHeart";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router";
-import { IReviewsOverall, IRoot } from "../../../DummyData";
+import { IReviewsOverall } from "../../../DummyData";
 import { useRatingConverter } from "../../../Hooks/useRatingConverter";
-import { useSalonsDataContext } from "../../../Context/SalonsDataContext/SalonsDataContext";
+
 import { collection, doc, getDoc, updateDoc } from "firebase/firestore";
 import { db } from "../../../firebase-config";
 

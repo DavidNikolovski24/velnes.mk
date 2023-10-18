@@ -1,5 +1,3 @@
-import React from "react";
-
 const FilterIcon = ({
   color = "black",
   size = 24,

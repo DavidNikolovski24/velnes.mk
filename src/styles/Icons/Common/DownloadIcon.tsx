@@ -1,5 +1,3 @@
-import React from "react";
-
 const DownloadIcon = ({
   color = "black",
   size = 24,

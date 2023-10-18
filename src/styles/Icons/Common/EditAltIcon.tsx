@@ -1,5 +1,3 @@
-import React from "react";
-
 const EditAltIcon = ({
   color = "black",
   size = 24,

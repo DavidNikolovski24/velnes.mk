@@ -88,7 +88,7 @@ const FeedbackFormPage = () => {
             <Rating
               size="large"
               // value={value}
-              onChange={(event, newValue) => {
+              onChange={() => {
                 // setValue(newValue);
               }}
             />
@@ -100,7 +100,7 @@ const FeedbackFormPage = () => {
             <Rating
               size="large"
               // value={value}
-              onChange={(event, newValue) => {
+              onChange={() => {
                 // setValue(newValue);
               }}
             />
@@ -112,7 +112,7 @@ const FeedbackFormPage = () => {
             <Rating
               size="large"
               // value={value}
-              onChange={(event, newValue) => {
+              onChange={() => {
                 // setValue(newValue);
               }}
             />

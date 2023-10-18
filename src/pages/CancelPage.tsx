@@ -45,7 +45,6 @@ const CancelPage = () => {
 
     updateDoc(salonDocRef, updates).then(() => {
       console.log("doc updated");
-      setFavoriteSalon((prev) => !prev);
     });
   };
 
@@ -124,6 +123,3 @@ const CancelModalContainer = styled.div`
     ${openModalStyles}
   }
 `;
-function setFavoriteSalon(arg0: (prev: any) => boolean) {
-  throw new Error("Function not implemented.");
-}

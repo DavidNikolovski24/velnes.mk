@@ -1,5 +1,3 @@
-import React from "react";
-
 const MessageIcon = ({
   color = "black",
   size = 20,

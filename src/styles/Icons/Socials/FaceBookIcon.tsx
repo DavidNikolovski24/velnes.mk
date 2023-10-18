@@ -1,5 +1,3 @@
-import React from "react";
-
 const FaceBookIcon = ({ color, size }: { color: string; size: number }) => {
   return (
     <svg

@@ -1,5 +1,3 @@
-import React from "react";
-
 const CheckIcon = ({
   color = "black",
   size = 24,

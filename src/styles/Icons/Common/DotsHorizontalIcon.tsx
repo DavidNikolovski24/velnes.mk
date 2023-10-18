@@ -1,5 +1,3 @@
-import React from "react";
-
 const DotsHorizontalIcon = ({
   color = "black",
   size = 24,

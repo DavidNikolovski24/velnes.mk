@@ -1,5 +1,3 @@
-import React from "react";
-
 const DeleteIcon = ({
   color = "black",
   size = 24,

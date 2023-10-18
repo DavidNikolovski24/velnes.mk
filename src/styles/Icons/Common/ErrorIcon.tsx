@@ -1,5 +1,3 @@
-import React from "react";
-
 const ErrorIcon = ({
   color = "black",
   size = 24,

@@ -1,5 +1,3 @@
-import React from "react";
-
 const LowVisionIcon = ({
   color = "black",
   size = 24,

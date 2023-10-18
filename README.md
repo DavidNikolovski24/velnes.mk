@@ -4,5 +4,4 @@
 
 -Client requirement was this app to be mobile only.
 
--My side of job was to build only frontend side. db.json is temporary solution until backend comes in. 
-
+-My side of job was to build only frontend side. I add Firebase as temporary solution until backend comes in.

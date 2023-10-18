@@ -1,11 +1,17 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+
 import App from "./App.tsx";
 import "./index.css";
 
-ReactDOM.hydrate(
-  <React.StrictMode>
+const rootElement = document.getElementById("root");
+let root;
+if (rootElement) {
+  root = createRoot(rootElement);
+}
+
+root?.render(
+  <StrictMode>
     <App />
-  </React.StrictMode>,
-  document.getElementById("root")
+  </StrictMode>
 );

@@ -48,7 +48,7 @@ const CardReview = ({
         <CardReviewInnerUpInfoParentDiv>
           <CardReviewInnerUpInfoAvatar avatar={avatar} />
           <CardReviewInnerUpInfoDesc>
-            <H4Styled>{userName}</H4Styled>
+            <H4Styled color={theme.colors.primary.black}>{userName}</H4Styled>
             <PHelpText color={theme.colors.greys[700]}>{datePosted}</PHelpText>
           </CardReviewInnerUpInfoDesc>
         </CardReviewInnerUpInfoParentDiv>
@@ -60,7 +60,9 @@ const CardReview = ({
       </CardReviewInnerUp>
       <CardReviewInnerDown>
         <CardReviewInnerDownTextDiv>
-          <Paragraph>{showReadMore ? paragraphShort : paragraph}</Paragraph>
+          <Paragraph color={theme.colors.primary.black}>
+            {showReadMore ? paragraphShort : paragraph}
+          </Paragraph>
           {showReadMore && (
             <ALink
               onClick={showMoreHandler}
@@ -79,7 +81,9 @@ const CardReview = ({
           </CardReviewInnerDownBadgesLeft>
           <CardReviewInnerDownBadgesRight>
             {services.map((serv) => (
-              <ExtendedPHelpText key={serv}>{serv}</ExtendedPHelpText>
+              <ExtendedPHelpText key={serv} color={theme.colors.primary.black}>
+                {serv}
+              </ExtendedPHelpText>
             ))}
           </CardReviewInnerDownBadgesRight>
         </CardReviewInnerDownBadgesDiv>
@@ -176,4 +180,5 @@ const ExtendedPHelpText = styled(PHelpText)`
   border-radius: 13px;
   border: 1px solid #bec2c7;
   text-align: center;
+  color: ${theme.colors.primary.black};
 `;

@@ -69,6 +69,7 @@ export const InputStyled = styled.input`
   font-size: ${theme.typography.linkTextDefault.fontSize}px;
   font-weight: ${theme.typography.linkTextDefault.fontWeight};
   color: ${theme.colors.greys[700]};
+  background-color: white;
   &:placeholder {
     font-size: ${theme.typography.linkTextDefault.fontSize}px;
     font-weight: ${theme.typography.linkTextDefault.fontWeight};

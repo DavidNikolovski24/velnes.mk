@@ -93,7 +93,7 @@ const CardRecommended = ({
         </div>
       </CardRecommendedStyledDivImg>
       <CardRecommendedStyledDivDesc>
-        <H4Styled>{name}</H4Styled>
+        <H4Styled color={theme.colors.primary.black}>{name}</H4Styled>
         <PError color={theme.colors.primary.orange}>
           <ReviewStar color={theme.colors.primary.orange} />
           {rating} <span>&#183;</span>{" "}

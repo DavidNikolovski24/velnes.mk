@@ -120,7 +120,7 @@ const HomePage = ({ setFilterResults }: Props) => {
           <H2StyledCustomBusiness color={theme.colors.primary.brown}>
             Velnes for business
           </H2StyledCustomBusiness>
-          <Paragraph>
+          <Paragraph color={theme.colors.primary.black}>
             Get started with Velnes to run your bushess, better. Calendar,
             Booking, Marketing, and Payments all in one.
           </Paragraph>

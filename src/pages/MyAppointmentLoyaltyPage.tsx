@@ -14,7 +14,7 @@ const MyAppointmentLoyaltyPage = () => {
           You have <SpanModified> 100 </SpanModified>loyalty points
         </H2Styled>
 
-        <Paragraph>
+        <Paragraph color={theme.colors.primary.black}>
           Loyalty points are accumulated by booking appointments with Velnes.
           You can use them to get a discount for future bookings{" "}
         </Paragraph>

@@ -16,7 +16,9 @@ const ProfilePage = () => {
       <ProfilePageContainer>
         <ProfilePageImgDiv></ProfilePageImgDiv>
         <div style={{ textAlign: "center" }}>
-          <H2Styled>Katerina Stojanovska</H2Styled>
+          <H2Styled color={theme.colors.primary.black}>
+            Katerina Stojanovska
+          </H2Styled>
           <ALink
             onClick={() => {
               navigate("view-profile");

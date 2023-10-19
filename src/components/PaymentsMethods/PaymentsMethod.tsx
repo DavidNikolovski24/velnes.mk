@@ -55,8 +55,10 @@ const PaymentsMethod = ({ cardName, cardNumber }: Props) => {
       <ConfirmationModalContainer data-ismodalopen={isModalDelete}>
         <ContainerDirColAlignStart gap={theme.spacings.XS * 2}>
           <ContainerJSpaceBetweenAStart>
-            <H3Styled>{cardName}</H3Styled>
-            <H3Styled>{concatStrings}</H3Styled>
+            <H3Styled color={theme.colors.primary.black}>{cardName}</H3Styled>
+            <H3Styled color={theme.colors.primary.black}>
+              {concatStrings}
+            </H3Styled>
           </ContainerJSpaceBetweenAStart>
           <Paragraph>Expiration 04/25</Paragraph>
         </ContainerDirColAlignStart>

@@ -44,43 +44,47 @@ const ViewProfilePage = () => {
         {/*  */}
         <ContainerDirColAlignStart gap={theme.spacings.M}>
           <ContainerInlineFDirColAlignStart gap={theme.spacings.XXS}>
-            <H4Styled>First name</H4Styled>
+            <H4Styled color={theme.colors.primary.black}>First name</H4Styled>
             <AlinkTextLarge color={theme.colors.primary.black}>
               Katerina
             </AlinkTextLarge>
           </ContainerInlineFDirColAlignStart>
           <ContainerInlineFDirColAlignStart gap={theme.spacings.XXS}>
-            <H4Styled>Last name</H4Styled>
+            <H4Styled color={theme.colors.primary.black}>Last name</H4Styled>
             <AlinkTextLarge color={theme.colors.primary.black}>
               Stojanovska
             </AlinkTextLarge>
           </ContainerInlineFDirColAlignStart>
           <ContainerInlineFDirColAlignStart gap={theme.spacings.XXS}>
-            <H4Styled>Mobile number</H4Styled>
+            <H4Styled color={theme.colors.primary.black}>
+              Mobile number
+            </H4Styled>
             <AlinkTextLarge color={theme.colors.primary.black}>
               +89099 999 99 00
             </AlinkTextLarge>
           </ContainerInlineFDirColAlignStart>
           <ContainerInlineFDirColAlignStart gap={theme.spacings.XXS}>
-            <H4Styled>Email </H4Styled>
+            <H4Styled color={theme.colors.primary.black}>Email </H4Styled>
             <AlinkTextLarge color={theme.colors.primary.black}>
               upr@com.gov.mk
             </AlinkTextLarge>
           </ContainerInlineFDirColAlignStart>
           <ContainerInlineFDirColAlignStart gap={theme.spacings.XXS}>
-            <H4Styled>Date of birth</H4Styled>
+            <H4Styled color={theme.colors.primary.black}>
+              Date of birth
+            </H4Styled>
             <AlinkTextLarge color={theme.colors.primary.black}>
               16 Jule 1994
             </AlinkTextLarge>
           </ContainerInlineFDirColAlignStart>
           <ContainerInlineFDirColAlignStart gap={theme.spacings.XXS}>
-            <H4Styled>Gender</H4Styled>
+            <H4Styled color={theme.colors.primary.black}>Gender</H4Styled>
             <AlinkTextLarge color={theme.colors.primary.black}>
               Female
             </AlinkTextLarge>
           </ContainerInlineFDirColAlignStart>
           <ContainerInlineFDirColAlignStart gap={theme.spacings.XXS}>
-            <H4Styled>Address</H4Styled>
+            <H4Styled color={theme.colors.primary.black}>Address</H4Styled>
             <AlinkTextLarge color={theme.colors.primary.black}>
               Skopje,Macedonia
             </AlinkTextLarge>
@@ -99,8 +103,10 @@ const ViewProfilePage = () => {
         </PrimaryButton>
       </PageContainerPrimary>
       <ConfirmationModalContainer data-ismodalopen={isModalDelete}>
-        <H2Styled>Are you sure you want to leave Velnes?</H2Styled>
-        <Paragraph>
+        <H2Styled color={theme.colors.primary.black}>
+          Are you sure you want to leave Velnes?
+        </H2Styled>
+        <Paragraph color={theme.colors.primary.black}>
           Your profile can not be restored after you delete it
         </Paragraph>
         <BottomCtaDiv>

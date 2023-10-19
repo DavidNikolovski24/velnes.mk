@@ -23,7 +23,7 @@ const ProfilPaymentMethodsPage = () => {
           <H2Styled color={theme.colors.primary.brown}>
             Payment methods
           </H2Styled>
-          <Paragraph>
+          <Paragraph color={theme.colors.primary.black}>
             Securely save your card details for hastle-free payments.
           </Paragraph>
         </ContainerInlineFDirColAlignStart>
@@ -34,7 +34,7 @@ const ProfilPaymentMethodsPage = () => {
           >
             <PlusIcon color={theme.colors.primary.orange} />
           </IconButton>
-          <Paragraph>Add card</Paragraph>
+          <Paragraph color={theme.colors.primary.black}>Add card</Paragraph>
         </ContainerAlignCenter>
         {userCard.map((card) => (
           <PaymentsMethod

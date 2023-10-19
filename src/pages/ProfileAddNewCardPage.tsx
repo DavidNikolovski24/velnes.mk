@@ -16,7 +16,7 @@ const ProfileAddNewCardPage = () => {
       <PageContainerPrimary gap={theme.spacings.XL}>
         <ContainerDirColAlignStart gap={theme.spacings.XS}>
           <H2Styled color={theme.colors.primary.brown}>Add new card</H2Styled>
-          <Paragraph>
+          <Paragraph color={theme.colors.primary.black}>
             Securely save your card details for hassle-free payments.
           </Paragraph>
         </ContainerDirColAlignStart>

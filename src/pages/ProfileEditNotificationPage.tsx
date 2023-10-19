@@ -19,7 +19,7 @@ const ProfileEditNotificationPage = () => {
       <PageContainerPrimary gap={theme.spacings.XL}>
         <ContainerInlineFDirColAlignStart gap={theme.spacings.XS}>
           <H2Styled color={theme.colors.primary.brown}>Notifications</H2Styled>
-          <Paragraph>
+          <Paragraph color={theme.colors.primary.black}>
             Velnes only sends notifications about appointments you have booked
           </Paragraph>
         </ContainerInlineFDirColAlignStart>

@@ -78,6 +78,7 @@ const ProfilePageContainer = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 30px;
+  background-color: white;
 `;
 const ProfilePageImgDiv = styled.div`
   width: 58px;

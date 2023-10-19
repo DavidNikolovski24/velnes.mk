@@ -7,6 +7,7 @@ import {
 import { useState } from "react";
 import { IRoot } from "../../../DummyData";
 import { Link, useNavigate } from "react-router-dom";
+import { theme } from "../../../styles/themeStyles";
 interface Props extends IRoot {
   filterResults: any;
 }
@@ -62,12 +63,19 @@ const CardSaloonBigger = ({
         {slicedServices.map((service, index) => (
           <BottomContainerElement key={index}>
             <BottomContainerElementInnerLeft>
-              <ButtonsTypo style={{ textTransform: "capitalize" }}>
+              <ButtonsTypo
+                color={theme.colors.primary.black}
+                style={{ textTransform: "capitalize" }}
+              >
                 {service.service}
               </ButtonsTypo>
-              <PnormalTextRegular>1 hr – 1 hr 25 min</PnormalTextRegular>
+              <PnormalTextRegular color={theme.colors.primary.black}>
+                1 hr – 1 hr 25 min
+              </PnormalTextRegular>
             </BottomContainerElementInnerLeft>
-            <ButtonsTypo>from {service.price.short} EUR</ButtonsTypo>
+            <ButtonsTypo color={theme.colors.primary.black}>
+              from {service.price.short} EUR
+            </ButtonsTypo>
           </BottomContainerElement>
         ))}
       </BottomContainer>

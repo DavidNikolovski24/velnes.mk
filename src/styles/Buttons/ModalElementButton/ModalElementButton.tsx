@@ -32,7 +32,12 @@ const ModalElementButton = ({
         <LocationIcon color={colorIcon} size={sizeIcon} />
       )}
 
-      <Paragraph style={{ textTransform: "capitalize" }}>{text}</Paragraph>
+      <Paragraph
+        color={theme.colors.primary.black}
+        style={{ textTransform: "capitalize" }}
+      >
+        {text}
+      </Paragraph>
     </ElementButtonModal>
   );
 };

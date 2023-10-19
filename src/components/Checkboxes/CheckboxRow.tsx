@@ -11,6 +11,7 @@ const CheckboxRow = ({ text }: { text: string }) => {
         <input
           type="checkbox"
           checked={isChecked}
+          style={{ backgroundColor: "white" }}
           onChange={() => setIsChecked((prev) => !prev)}
           id={text}
         />
@@ -31,5 +32,6 @@ export const CheckboxRowParent = styled.div`
 export const CheckboxRowLabel = styled.label`
   font-weight: ${theme.typography.linkTextLarge.fontWeight};
   font-size: ${theme.typography.linkTextLarge.fontSize}px;
+  color: ${theme.colors.primary.black};
 `;
 const CheckboxRowCheckboxDiv = styled.div``;

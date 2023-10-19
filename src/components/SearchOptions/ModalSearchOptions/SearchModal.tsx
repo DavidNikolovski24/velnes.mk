@@ -297,7 +297,15 @@ export const SearchModal = ({
               From
             </PnormalTextBold>
             <DropdownButton onChange={onChangeHandlerFrom}>
-              <option value="">Choose</option>
+              <option
+                value=""
+                style={{
+                  color: ` ${theme.colors.primary.black}`,
+                  backgroundColor: "white",
+                }}
+              >
+                Choose
+              </option>
               {[
                 "09:00 AM",
                 "10:00 AM",
@@ -312,7 +320,14 @@ export const SearchModal = ({
                 "07:00 PM",
                 "08:00 PM",
               ].map((el) => (
-                <option key={el} value={el}>
+                <option
+                  key={el}
+                  value={el}
+                  style={{
+                    color: ` ${theme.colors.primary.black}`,
+                    backgroundColor: "white",
+                  }}
+                >
                   {el}
                 </option>
               ))}
@@ -323,7 +338,15 @@ export const SearchModal = ({
               To
             </PnormalTextBold>
             <DropdownButton onChange={onChangeHandlerTo}>
-              <option value="">Choose</option>
+              <option
+                value=""
+                style={{
+                  color: ` ${theme.colors.primary.black}`,
+                  backgroundColor: "white",
+                }}
+              >
+                Choose
+              </option>
               {[
                 "09:00 AM",
                 "10:00 AM",
@@ -338,7 +361,14 @@ export const SearchModal = ({
                 "07:00 PM",
                 "08:00 PM",
               ].map((el) => (
-                <option key={el} value={el}>
+                <option
+                  key={el}
+                  value={el}
+                  style={{
+                    color: ` ${theme.colors.primary.black}`,
+                    backgroundColor: "white",
+                  }}
+                >
                   {el}
                 </option>
               ))}

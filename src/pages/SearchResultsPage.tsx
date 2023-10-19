@@ -130,7 +130,7 @@ const SearchResultsPage = ({ filterResults }: { filterResults: any }) => {
         <FilterDiv>
           <ContainerInlineFDirColAlignStart gap={theme.spacings.M}>
             <ContainerInlineFDirColAlignStart>
-              <H3Styled>Sort by</H3Styled>
+              <H3Styled color={theme.colors.primary.black}>Sort by</H3Styled>
             </ContainerInlineFDirColAlignStart>
             <ContainerDirColAlignStart gap={theme.spacings.M}>
               <RadioButtonComponent
@@ -163,8 +163,12 @@ const SearchResultsPage = ({ filterResults }: { filterResults: any }) => {
               valueLabelDisplay="auto"
             />
             <ContainerJSpaceBetweenAStart>
-              <PlinkTextDefault>$0</PlinkTextDefault>
-              <PlinkTextDefault>$200+</PlinkTextDefault>
+              <PlinkTextDefault color={theme.colors.primary.black}>
+                $0
+              </PlinkTextDefault>
+              <PlinkTextDefault color={theme.colors.primary.black}>
+                $200+
+              </PlinkTextDefault>
             </ContainerJSpaceBetweenAStart>
           </ContainerInlineFDirColAlignStart>
           <hr />

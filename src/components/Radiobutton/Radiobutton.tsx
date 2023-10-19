@@ -30,9 +30,13 @@ const RadioButtonComponent = ({
           onChange={() => handleSelectChange(text)}
         />
         <RadioButtonLabel />
-        <H4Styled>{text}</H4Styled>
+        <H4Styled color={theme.colors.primary.black}>{text}</H4Styled>
       </Item>
-      {price && <PnormalTextBold>{price} EUR</PnormalTextBold>}
+      {price && (
+        <PnormalTextBold color={theme.colors.primary.black}>
+          {price} EUR
+        </PnormalTextBold>
+      )}
     </Wrapper>
   );
 };

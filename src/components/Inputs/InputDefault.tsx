@@ -57,7 +57,8 @@ const InputStyled = styled.input`
   width: 85%;
   height: 30px;
   border: none;
-
+  color: ${theme.colors.primary.black};
+  background-color: white;
   box-sizing: border-box;
   outline: none;
   &:placeholder {
@@ -88,5 +89,6 @@ const LabelStyled = styled.label`
   top: 5px;
   left: -3px;
   transform: translate(20px, 0px);
+  color: ${theme.colors.greys[700]};
   transition: transform 0.3s ease;
 `;

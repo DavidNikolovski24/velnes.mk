@@ -48,6 +48,8 @@ const InputStyled = styled.input`
   height: 100%;
   border: none;
   background: #fcfeff;
+
+  color: ${theme.colors.primary.black};
   outline: none;
   &:placeholder {
     font-size: ${theme.typography.linkTextDefault.fontSize}px;

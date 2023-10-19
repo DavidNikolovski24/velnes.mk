@@ -109,7 +109,9 @@ const SelectEmployeePage = () => {
         <H2Styled color={theme.colors.primary.black}>
           Select date and time
         </H2Styled>
-        <ButtonsTypo>{currentMonth}</ButtonsTypo>
+        <ButtonsTypo color={theme.colors.greys[700]}>
+          {currentMonth}
+        </ButtonsTypo>
         <DragSwiper slidesPerView={5} spaceBetween={10} parentMarginY={0}>
           {dates.map((date: string) => {
             const day: string = date?.split(" ")[1];
@@ -142,7 +144,9 @@ const SelectEmployeePage = () => {
       </ContainerSelectEmployee>
       <ConfirmationModalContainer data-ismodalopen={isModalConfirm}>
         <ContainerDirColAlignStart gap={24}>
-          <H3Styled>Waiting list registration</H3Styled>
+          <H3Styled color={theme.colors.primary.black}>
+            Waiting list registration
+          </H3Styled>
           <Paragraph color={theme.colors.greys[700]}>
             Registering for waiting list doesn’t guarantee getting an
             appointment at the time you chose. If the time slot becomes

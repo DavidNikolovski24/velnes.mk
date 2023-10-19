@@ -18,12 +18,19 @@ const RatingFactor = ({
   return (
     <RatingFactorContainer>
       {checkboxIcon && <input type="checkbox" />}
-      <PnormalTextRegularmodified>{placeholder}</PnormalTextRegularmodified>
+      <PnormalTextRegularmodified color={theme.colors.primary.black}>
+        {placeholder}
+      </PnormalTextRegularmodified>
       <RatingFactorProgressContainer>
         <ProgressBarPlaceholder>
           <ProgressBar width={+results * 20}></ProgressBar>
         </ProgressBarPlaceholder>
-        <PHelpText style={{ paddingLeft: "10px" }}>{results}</PHelpText>
+        <PHelpText
+          style={{ paddingLeft: "10px" }}
+          color={theme.colors.primary.black}
+        >
+          {results}
+        </PHelpText>
       </RatingFactorProgressContainer>
     </RatingFactorContainer>
   );

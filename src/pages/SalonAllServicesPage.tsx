@@ -114,7 +114,9 @@ const SalonAllServicesPage = () => {
               return servicesWithCategory?.length !== 0 ? (
                 <ContainerDirColAlignStartWFull key={servCat}>
                   <ContainerJCenterACenter>
-                    <H3Styled>{servCat}</H3Styled>
+                    <H3Styled color={theme.colors.primary.black}>
+                      {servCat}
+                    </H3Styled>
                     <InfoIcon color={theme.colors.greys[700]} />
                   </ContainerJCenterACenter>
 

@@ -10,6 +10,7 @@ const BreadCrumbs = ({ salon }: { salon: string | undefined }) => {
     <BreadCrumbsDiv>
       <BreadCrumbsDivInner>
         <PlinkTextDefaultLastBold
+          color={theme.colors.primary.black}
           onClick={() => {
             navigate("/");
           }}
@@ -17,13 +18,16 @@ const BreadCrumbs = ({ salon }: { salon: string | undefined }) => {
           Home &#183;
         </PlinkTextDefaultLastBold>
         <PlinkTextDefaultLastBold
+          color={theme.colors.primary.black}
           onClick={() => {
             navigate("/search-results");
           }}
         >
           Search &#183;
         </PlinkTextDefaultLastBold>
-        <PlinkTextDefaultLastBold>{salon} </PlinkTextDefaultLastBold>
+        <PlinkTextDefaultLastBold color={theme.colors.primary.black}>
+          {salon}
+        </PlinkTextDefaultLastBold>
       </BreadCrumbsDivInner>
     </BreadCrumbsDiv>
   );

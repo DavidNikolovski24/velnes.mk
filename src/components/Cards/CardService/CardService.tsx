@@ -66,10 +66,15 @@ const CardService = ({ desc = true, service, price, discount }: Props) => {
       <CardServiceParent>
         <CardServiceInnerUpperDiv>
           <CardServiceInnerUpperInfoDiv>
-            <H4Styled style={{ textTransform: "capitalize" }}>
+            <H4Styled
+              style={{ textTransform: "capitalize" }}
+              color={theme.colors.primary.black}
+            >
               {service}
             </H4Styled>
-            <PnormalTextRegular>1 hr – 1 hr 25 min</PnormalTextRegular>
+            <PnormalTextRegular color={theme.colors.primary.black}>
+              1 hr – 1 hr 25 min
+            </PnormalTextRegular>
           </CardServiceInnerUpperInfoDiv>
           <IconButton
             bg={buttonBg}
@@ -102,10 +107,14 @@ const CardService = ({ desc = true, service, price, discount }: Props) => {
             <LinkTextLargeModified color={theme.colors.greys[600]}>
               {randomIncreasingPrice} EUR
             </LinkTextLargeModified>
-            <ButtonsTypo>{price.short} EUR</ButtonsTypo>
+            <ButtonsTypo color={theme.colors.primary.black}>
+              {price.short} EUR
+            </ButtonsTypo>
           </PriceDiscoutDiv>
         ) : (
-          <ButtonsTypo>from {price.short} EUR</ButtonsTypo>
+          <ButtonsTypo color={theme.colors.primary.black}>
+            from {price.short} EUR
+          </ButtonsTypo>
         )}
         {desc && (
           <ALink

@@ -86,12 +86,16 @@ const ReviewAndConfirmPage = () => {
         <ContainerDirColAlignStart gap={theme.spacings.XS}>
           <ContainerAlignCenter gap={theme.spacings.XS}>
             <ContainerFirstImgDiv thumbnail={findedSalon?.thumbnail} />
-            <PnormalTextBold>{findedSalon?.name}</PnormalTextBold>
+            <PnormalTextBold color={theme.colors.primary.black}>
+              {findedSalon?.name}
+            </PnormalTextBold>
           </ContainerAlignCenter>
 
           <ContainerAlignCenter gap={theme.spacings.XS}>
             <CalendarIcon color={theme.colors.greys[700]} />
-            <PnormalTextRegular>{`${contextData[0].choosedDate.day} ${contextData[0].choosedDate.date} ${currentMonth},${contextData[0].choosedTime} `}</PnormalTextRegular>
+            <PnormalTextRegular
+              color={theme.colors.greys[700]}
+            >{`${contextData[0].choosedDate.day} ${contextData[0].choosedDate.date} ${currentMonth},${contextData[0].choosedTime} `}</PnormalTextRegular>
             <div
               onClick={() => {
                 navigate(`/salon/${id}/services/booking`);
@@ -120,7 +124,9 @@ const ReviewAndConfirmPage = () => {
           </ContainerJSpaceBetweenAStart>
 
           <ContainerJSpaceBetweenAStart>
-            <PnormalTextBold>Total</PnormalTextBold>
+            <PnormalTextBold color={theme.colors.primary.black}>
+              Total
+            </PnormalTextBold>
             <ContainerJCenterACenter gap={theme.spacings.XXS}>
               <PnormalTextBoldModified color={theme.colors.greys[700]}>
                 {higherSumPrice}
@@ -213,7 +219,7 @@ const ReviewAndConfirmPage = () => {
           </H3Styled>
           <CheckboxRow text="I want to subscribe to weekly Newsletter" />
           <CheckboxRow text="I want to receive marketing emails and SMS from this venue" />
-          <PHelpText>
+          <PHelpText color={theme.colors.primary.black}>
             Unsubscribe by clicking the ‘unsubscribe’ link in any of the emails,
             or contact your venue directly about the emails they send and how
             they use your personal information. Read more about it in our
@@ -222,7 +228,7 @@ const ReviewAndConfirmPage = () => {
               Privacy Policy.
             </CustomSpan>
           </PHelpText>
-          <PHelpText>
+          <PHelpText color={theme.colors.primary.black}>
             By continuing you agree to our
             <CustomSpan color={theme.colors.primary.orange}>
               Booking Terms.

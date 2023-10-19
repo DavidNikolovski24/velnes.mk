@@ -165,7 +165,9 @@ const SalonPage = () => {
         </DragSwiperWrapperParent>
         <div style={{ width: "100%", padding: "0 20px" }}>
           <ContainerDirColAlignStartWFull gap={theme.spacings.XS * 2}>
-            <H2Styled>{findedSalon?.name}</H2Styled>
+            <H2Styled color={theme.colors.primary.black}>
+              {findedSalon?.name}
+            </H2Styled>
             <div
               onClick={() => {
                 navigate("reviews");
@@ -180,12 +182,15 @@ const SalonPage = () => {
               )}
             </div>
             <ContainerDirColAlignStart gap={theme.spacings.XXS}>
-              <PnormalTextRegular>
+              <PnormalTextRegular color={theme.colors.primary.black}>
                 {findedSalon?.category} Salon
               </PnormalTextRegular>
               <ContainerAlignCenter gap={theme.spacings.XS}>
-                <PnormalTextRegular>Closed</PnormalTextRegular> &#183;
-                <PnormalTextRegular>
+                <PnormalTextRegular color={theme.colors.primary.black}>
+                  Closed
+                </PnormalTextRegular>{" "}
+                &#183;
+                <PnormalTextRegular color={theme.colors.primary.black}>
                   Opens on Tuesday at 10:00
                 </PnormalTextRegular>
               </ContainerAlignCenter>
@@ -196,7 +201,9 @@ const SalonPage = () => {
 
         <SectionSaloon>
           <ServicesWrapper>
-            <H3Styled>Matching search</H3Styled>
+            <H3Styled color={theme.colors.primary.black}>
+              Matching search
+            </H3Styled>
 
             {trim3Services?.map((service: IService, index: number) => (
               <CardService
@@ -220,7 +227,9 @@ const SalonPage = () => {
             {/* Meet our team */}
 
             <MeetOurTeamContainer>
-              <H2Styled>Meet our team</H2Styled>
+              <H2Styled color={theme.colors.primary.black}>
+                Meet our team
+              </H2Styled>
               <div style={{ maxWidth: "100%" }}>
                 <DragSwiper
                   slidesPerView={3}
@@ -286,8 +295,10 @@ const SalonPage = () => {
             {/* about saloon */}
             <AboutSaloonContainer>
               <ContainerDirColAlignStart gap={theme.spacings.XL}>
-                <H2Styled>About salon</H2Styled>
-                <PnormalTextRegular>
+                <H2Styled color={theme.colors.primary.black}>
+                  About salon
+                </H2Styled>
+                <PnormalTextRegular color={theme.colors.primary.black}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore Ut enim ad minim
                   veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -308,7 +319,7 @@ const SalonPage = () => {
 
               <ContainerFDirColItemsCenter gap={theme.spacings.XS}>
                 <ContainerDirColAlignStart gap={1}>
-                  <PnormalTextRegular>
+                  <PnormalTextRegular color={theme.colors.primary.black}>
                     {`${findedSalon?.address}, ${findedSalon?.location}`}
                   </PnormalTextRegular>
                   <ALink color={theme.colors.primary.orange}>
@@ -318,7 +329,9 @@ const SalonPage = () => {
               </ContainerFDirColItemsCenter>
               {/* Opening hours */}
               <ContainerDirColAlignStart gap={theme.spacings.XS * 2}>
-                <H3Styled>Opening hours</H3Styled>
+                <H3Styled color={theme.colors.primary.black}>
+                  Opening hours
+                </H3Styled>
                 <ContainerDirColAlignStart gap={theme.spacings.XS}>
                   <ContainerDirColAlignStart gap={1}>
                     <OpeningHours
@@ -357,7 +370,7 @@ const SalonPage = () => {
               </ContainerDirColAlignStart>
               {/* Contact */}
               <ContainerDirColAlignStart gap={theme.spacings.XS * 2}>
-                <H3Styled>Contact</H3Styled>
+                <H3Styled color={theme.colors.primary.black}>Contact</H3Styled>
                 <ContainerAlignCenter gap={theme.spacings.XS}>
                   <PlaceholderIcon color={theme.colors.greys[700]} />
                   <ALink color={theme.colors.primary.orange}>
@@ -371,7 +384,9 @@ const SalonPage = () => {
                 </ContactInnerSocialsDiv>
               </ContainerDirColAlignStart>
               <ContainerDirColAlignStart>
-                <H3Styled>Additional information</H3Styled>
+                <H3Styled color={theme.colors.primary.black}>
+                  Additional information
+                </H3Styled>
                 <ContainerDirColAlignStart gap={theme.spacings.M}>
                   <AdditionalInfoElement text="Pay by card" />
                   <AdditionalInfoElement text="Parking space" />
@@ -386,7 +401,9 @@ const SalonPage = () => {
               <Accordion headline="Brands used" />
               <Accordion headline="Payment & cancellation policy" />
               {/* Recommended */}
-              <H2Styled>Recommended</H2Styled>
+              <H2Styled color={theme.colors.primary.black}>
+                Recommended
+              </H2Styled>
               <DragSwiperWrapperParent>
                 <DragSwiper
                   slidesPerView={2}

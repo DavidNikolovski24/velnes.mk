@@ -13,7 +13,9 @@ const AdditionalInfoElement = ({
   return (
     <ContainerAlignCenter>
       <PlaceholderIcon color={placeholderColor} />
-      <PlinkTextDefault>{text}</PlinkTextDefault>
+      <PlinkTextDefault color={theme.colors.primary.black}>
+        {text}
+      </PlinkTextDefault>
     </ContainerAlignCenter>
   );
 };

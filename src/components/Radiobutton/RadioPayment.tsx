@@ -42,8 +42,10 @@ const RadioPayment = ({ icon = false, subTitle, title, name }: Props) => {
           />
           <RadioButtonLabel />
           <RadioPaymentInnerLeftInnerDivInnerDiv>
-            <Paragraph>{title}</Paragraph>
-            {subTitle && <PHelpText>{subTitle}</PHelpText>}
+            <Paragraph color={theme.colors.greys[700]}>{title}</Paragraph>
+            {subTitle && (
+              <PHelpText color={theme.colors.greys[700]}>{subTitle}</PHelpText>
+            )}
           </RadioPaymentInnerLeftInnerDivInnerDiv>
         </RadioPaymentInnerLeftInner>
       </RadioPaymentInnerLeft>

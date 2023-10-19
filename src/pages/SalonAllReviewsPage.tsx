@@ -76,7 +76,7 @@ const SalonAllReviewsPage = () => {
         </ContainerDirColAlignStartModified>
         {/*  */}
         <ContainerDirColAlignStartWFull gap={theme.spacings.XS * 2}>
-          <H3Styled>Filter by</H3Styled>
+          <H3Styled color={theme.colors.primary.black}>Filter by</H3Styled>
           <ContainerDirColAlignStartWFull gap={theme.spacings.M}>
             <RatingFactor
               placeholder="5"

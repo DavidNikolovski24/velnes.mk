@@ -23,12 +23,17 @@ const AppointmentDetailsCard = ({
   return (
     <>
       <ContainerDirColAlignStartWFull gap={theme.spacings.XXS}>
-        <PnormalTextBold style={{ textTransform: "capitalize" }}>
+        <PnormalTextBold
+          style={{ textTransform: "capitalize" }}
+          color={theme.colors.primary.black}
+        >
           {treatment}
         </PnormalTextBold>
-        <PnormalTextRegular>With {choosedEmployee}</PnormalTextRegular>
+        <PnormalTextRegular color={theme.colors.primary.black}>
+          With {choosedEmployee}
+        </PnormalTextRegular>
         <ContainerJSpaceBetweenACenter>
-          <PnormalTextRegular>
+          <PnormalTextRegular color={theme.colors.primary.black}>
             Duration:{duration === "Short-medium" ? 30 : 0}min
           </PnormalTextRegular>
           <ContainerJCenterACenter gap={theme.spacings.XXS}>

@@ -28,7 +28,11 @@ const Accordion = ({
           <H3Styled color={headlineColor}>{headline}</H3Styled>
           {isOpen ? <UpSmallArrowIcon /> : <DownSmallArrowIcon />}
         </AccordionContainer>
-        {isOpen && <PnormalTextRegular>{text}</PnormalTextRegular>}
+        {isOpen && (
+          <PnormalTextRegular color={theme.colors.primary.black}>
+            {text}
+          </PnormalTextRegular>
+        )}
       </div>
       <hr />
     </>

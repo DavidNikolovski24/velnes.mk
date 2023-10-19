@@ -96,6 +96,7 @@ const InputStyled = styled.input<any>`
   border: none;
   background: #fcfeff;
   outline: none;
+  color: ${theme.colors.primary.black};
   &:placeholder {
     font-size: ${theme.typography.linkTextDefault.fontSize}px;
     font-weight: ${theme.typography.linkTextDefault.fontWeight};
@@ -117,7 +118,7 @@ const SelectElement = styled.p<any>`
   margin: 0;
   width: 100%;
   padding: 10px 20px;
-
+  color: ${theme.colors.primary.black};
   border-bottom: 1px solid ${theme.colors.secondary.orange};
   border-top: 1px solid ${theme.colors.secondary.orange};
   &:active {

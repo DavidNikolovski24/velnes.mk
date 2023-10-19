@@ -25,6 +25,9 @@ const TimeRowButton = ({
       hourColor = theme.colors.primary.black;
       bgColor = "white";
     }
+  } else {
+    hourColor = theme.colors.primary.black;
+    bgColor = "white";
   }
 
   return (
@@ -37,7 +40,7 @@ const TimeRowButton = ({
       <H4Styled color={hourColor}>{hour}</H4Styled>
       {type === "waiting" && (
         <WaitingListContainer>
-          <PHelpText>WAITING LIST</PHelpText>
+          <PHelpText color={theme.colors.primary.black}>WAITING LIST</PHelpText>
         </WaitingListContainer>
       )}
     </ContainerTimeRowButton>

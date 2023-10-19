@@ -57,7 +57,7 @@ const CancelPage = () => {
         </H2Styled>
         {findedSalon && <AppointmentList iconRight={true} {...findedSalon} />}
 
-        <PnormalTextRegular>
+        <PnormalTextRegular color={theme.colors.primary.black}>
           If you want to change the appointment time, you can reschedule your
           appointment.
         </PnormalTextRegular>

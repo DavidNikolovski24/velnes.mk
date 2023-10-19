@@ -41,4 +41,6 @@ const AddToCalendarPageContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 30px;
+
+  min-height: 100vh;
 `;

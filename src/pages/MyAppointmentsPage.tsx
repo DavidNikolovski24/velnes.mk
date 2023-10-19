@@ -87,7 +87,9 @@ const MyAppointmentsPage = () => {
           <AppointmentList key={salon.id} {...salon} />
         ))}
 
-        <Paragraph>Past appointments ({pastApp.length})</Paragraph>
+        <Paragraph color={theme.colors.primary.black}>
+          Past appointments ({pastApp.length})
+        </Paragraph>
         <PastAppointmentsContainer>
           {pastApp.map((salon: IRoot) => (
             <AppointmentList key={salon.id} {...salon} />
@@ -116,6 +118,7 @@ const MyAppointmentsPageContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 20px;
+  min-height: 100vh;
 `;
 const PastAppointmentsContainer = styled.div`
   display: flex;

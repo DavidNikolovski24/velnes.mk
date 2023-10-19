@@ -38,15 +38,17 @@ const AppointmentList = ({
       <AppointmentListContainerImgDiv thumbnail={thumbnail} />
       <AppointmentListContainerInnerDiv>
         <AppointmentListContainerInnerDivLast>
-          <PnormalTextRegular>
+          <PnormalTextRegular color={theme.colors.greys[700]}>
             {`${dayTermin} ${dateTermin} ${new Date().toLocaleString(
               "default",
               { month: "short" }
             )} `}
             at {timeTermin}
           </PnormalTextRegular>
-          <H4Styled>{name}</H4Styled>
-          <Paragraph>{appointments?.length} services</Paragraph>
+          <H4Styled color={theme.colors.primary.black}>{name}</H4Styled>
+          <Paragraph color={theme.colors.primary.black}>
+            {appointments?.length} services
+          </Paragraph>
         </AppointmentListContainerInnerDivLast>
         {iconRight && (
           <RightSmallArrowIcon color={theme.colors.greys[700]} size={24} />

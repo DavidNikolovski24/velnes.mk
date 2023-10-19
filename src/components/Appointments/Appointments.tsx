@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { ButtonsTypo } from "../../styles/Headlines/Headlines";
 import RightSmallArrowIcon from "../../styles/Icons/Arrows/RightSmallArrowIcon";
+import { theme } from "../../styles/themeStyles";
 
 const Appointments = ({
   headline,
@@ -16,7 +17,7 @@ const Appointments = ({
       }}
     >
       <AppointmentsContainerInner>
-        <ButtonsTypo>{headline}</ButtonsTypo>
+        <ButtonsTypo color={theme.colors.primary.black}>{headline}</ButtonsTypo>
         <RightSmallArrowIcon />
       </AppointmentsContainerInner>
     </AppointmentsContainer>

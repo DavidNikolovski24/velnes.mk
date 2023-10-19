@@ -118,7 +118,9 @@ const UpComAppointmentDetailsPage = () => {
         </PrimaryButtonFull>
         {/*  */}
         <ContainerInlineFDirColAlignStart gap={theme.spacings.XL}>
-          <H3Styled>Appointment details</H3Styled>
+          <H3Styled color={theme.colors.primary.black}>
+            Appointment details
+          </H3Styled>
           <ContainerInlineFDirColAlignStart gap={theme.spacings.XS}>
             {findedSalon?.appointments?.map((appo) => (
               <AppointmentDetailsCard key={appo.treatment} {...appo} />
@@ -160,11 +162,11 @@ const UpComAppointmentDetailsPage = () => {
             You will receive a full refund if you cancel right now
           </PHelpText>
         </WarningDiv>
-        <PnormalTextRegular>
+        <PnormalTextRegular color={theme.colors.primary.black}>
           If your plans change, you can reschedule your booking up to 1 hour
           before your appointment.
         </PnormalTextRegular>
-        <PnormalTextRegular>
+        <PnormalTextRegular color={theme.colors.primary.black}>
           You can cancel your booking up to 24 hours before your appointment and
           receive a full refund to your original payment method.
         </PnormalTextRegular>

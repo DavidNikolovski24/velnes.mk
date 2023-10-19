@@ -44,12 +44,14 @@ const AppointmentConfirmedPage = () => {
           <ContainerDirColAlignStartWFull gap={theme.spacings.XS}>
             <ContainerAlignCenter gap={theme.spacings.XS}>
               <ContainerFirstImgDiv thumbnail={findedSalon?.thumbnail} />
-              <PnormalTextBold>{findedSalon?.name}</PnormalTextBold>
+              <PnormalTextBold color={theme.colors.primary.black}>
+                {findedSalon?.name}
+              </PnormalTextBold>
             </ContainerAlignCenter>
 
             <ContainerAlignCenter gap={theme.spacings.XS}>
               <CalendarIcon color={theme.colors.greys[700]} />
-              <PnormalTextRegular>
+              <PnormalTextRegular color={theme.colors.greys[700]}>
                 {`${contextData[0].choosedDate.day} ${contextData[0].choosedDate.date} ${currentMonth},${contextData[0].choosedTime} `}
               </PnormalTextRegular>
               <div
@@ -61,7 +63,9 @@ const AppointmentConfirmedPage = () => {
               </div>
             </ContainerAlignCenter>
           </ContainerDirColAlignStartWFull>
-          <PlinkTextDefault>{contextData.length} services</PlinkTextDefault>
+          <PlinkTextDefault color={theme.colors.greys[700]}>
+            {contextData.length} services
+          </PlinkTextDefault>
           <ContainerDirColAlignStartWFull gap={theme.spacings.XS}>
             <PrimaryButtonFull
               outline={theme.colors.primary.orange}

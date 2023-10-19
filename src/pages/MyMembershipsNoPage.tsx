@@ -24,7 +24,9 @@ const MyMembershipsNoPage = () => {
           <H3Styled color={theme.colors.primary.black}>
             You have no active memberships
           </H3Styled>
-          <Paragraph>Find have to buy a membership or book a service</Paragraph>
+          <Paragraph color={theme.colors.primary.black}>
+            Find have to buy a membership or book a service
+          </Paragraph>
           <PrimaryButtonFull
             bg={"white"}
             outline={theme.colors.primary.orange}

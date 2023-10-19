@@ -18,7 +18,7 @@ const MyMembershipsNoPage = () => {
     <>
       <Titlebar icons={false} headline="" bg="white" closeIcon={true} />
 
-      <PageContainerPrimary>
+      <PageContainerPrimaryModified>
         <H2Styled color={theme.colors.primary.brown}>My memberships</H2Styled>
         <MyMembershipsNoPageContainerInner>
           <H3Styled color={theme.colors.primary.black}>
@@ -37,7 +37,7 @@ const MyMembershipsNoPage = () => {
             </ButtonsTypo>
           </PrimaryButtonFull>
         </MyMembershipsNoPageContainerInner>
-      </PageContainerPrimary>
+      </PageContainerPrimaryModified>
     </>
   );
 };
@@ -54,4 +54,8 @@ const MyMembershipsNoPageContainerInner = styled.div`
   flex-direction: column;
   height: 50vh;
   gap: 20px;
+`;
+
+const PageContainerPrimaryModified = styled(PageContainerPrimary)`
+  background-color: white;
 `;
